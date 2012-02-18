@@ -4,6 +4,7 @@ import net.citizensnpcs.questers.QuestManager;
 import net.citizensnpcs.questers.quests.Objectives.ObjectiveCycler;
 
 import org.bukkit.entity.Player;
+import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 
 public class QuestProgress {
@@ -92,6 +93,9 @@ public class QuestProgress {
             if (progress.update(event)) {
                 progress.getObjective().onCompletion(player, this);
                 this.progress[i] = null;
+            }
+            if (event instanceof Cancellable && ((Cancellable)event).isCancelled()) {
+            	break;
             }
         }
     }

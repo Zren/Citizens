@@ -12,6 +12,7 @@ import net.citizensnpcs.questers.quests.types.DistanceQuest;
 import net.citizensnpcs.questers.quests.types.HuntQuest;
 import net.citizensnpcs.questers.quests.types.KillNPCQuest;
 import net.citizensnpcs.questers.quests.types.LocationQuest;
+import net.citizensnpcs.questers.quests.types.TalkToQuest;
 import net.citizensnpcs.questers.rewards.CommandReward.CommandRewardBuilder;
 import net.citizensnpcs.questers.rewards.EconpluginReward.EconpluginRewardBuilder;
 import net.citizensnpcs.questers.rewards.ExperienceReward.ExperienceRewardBuilder;
@@ -40,6 +41,7 @@ public class QuestAPI {
         addQuestType(new DistanceQuest(), "move distance", "distance");
         addQuestType(new LocationQuest(), "move location", "moveloc", "location", "loc");
         addQuestType(new CombatQuest(), "player combat", "combat");
+        addQuestType(new TalkToQuest(), "talk to", "talk");
 
         addRewardBuilder(new ExperienceRewardBuilder(), "xp", "experience");
         addRewardBuilder(new CommandRewardBuilder(), "command", "cmd");
